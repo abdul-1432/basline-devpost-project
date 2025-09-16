@@ -53,3 +53,6 @@ CI Badges (update org/repo)
 
 License
 MIT
+
+Deployment
+- GitHub Pages: the web app auto-deploys via .github/workflows/gh-pages.yml on pushes to main. Published under your account’s Pages site.
