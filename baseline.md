@@ -1,0 +1,14 @@
+# Baseline Guardian Report
+Targets: chrome 140, chrome 139, edge 140, edge 139, firefox 142, firefox 141, ios_saf 18.5-18.6, ios_saf 18.4, ios_saf 18.3, ios_saf 18.2, ios_saf 18.1, ios_saf 18.0, ios_saf 17.6-17.7, ios_saf 17.5, ios_saf 17.4, ios_saf 17.3, ios_saf 17.2, ios_saf 17.1, ios_saf 17.0, ios_saf 16.6-16.7, ios_saf 16.5, ios_saf 16.4, ios_saf 16.3, ios_saf 16.2, ios_saf 16.1, ios_saf 16.0, ios_saf 15.6-15.8, ios_saf 15.5, ios_saf 15.4, ios_saf 15.2-15.3, ios_saf 15.0-15.1, safari 18.5-18.6, safari 18.4, safari 18.3, safari 18.2, safari 18.1, safari 18.0, safari 17.6, safari 17.5, safari 17.4, safari 17.3, safari 17.2, safari 17.1, safari 17.0, safari 16.6, safari 16.5, safari 16.4, safari 16.3, safari 16.2, safari 16.1, safari 16.0
+| File | Line | Feature | Baseline | Message |
+|------|------|---------|----------|---------|
+Coverage: -%
+
+| ./packages/baseline-cli/src/index.ts | 57 | html-popover-attribute | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/popover) [caniuse](https://caniuse.com/?search=popover) |
+| ./packages/eslint-plugin-baseline/src/index.ts | 4 | css-view-transitions | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/API/View_Transitions_API) [caniuse](https://caniuse.com/view-transitions) |
+| ./packages/eslint-plugin-baseline/src/index.ts | 24 | css-view-transitions | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/API/View_Transitions_API) [caniuse](https://caniuse.com/view-transitions) |
+| ./packages/baseline-core/src/index.js | 19 | css-has-pseudo-class | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/CSS/:has) [caniuse](https://caniuse.com/css-has) |
+| ./packages/baseline-core/src/index.ts | 46 | css-has-pseudo-class | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/CSS/:has) [caniuse](https://caniuse.com/css-has) |
+| ./packages/stylelint-plugin-baseline/src/index.ts | 7 | css-has-pseudo-class | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/CSS/:has) [caniuse](https://caniuse.com/css-has) |
+| ./packages/stylelint-plugin-baseline/src/index.ts | 10 | css-has-pseudo-class | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/CSS/:has) [caniuse](https://caniuse.com/css-has) |
+| ./packages/stylelint-plugin-baseline/src/index.ts | 17 | css-has-pseudo-class | unknown | No Baseline designation found [MDN](https://developer.mozilla.org/docs/Web/CSS/:has) [caniuse](https://caniuse.com/css-has) |

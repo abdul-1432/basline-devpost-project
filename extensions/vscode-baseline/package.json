@@ -1,0 +1,32 @@
+{
+  "name": "baseline-guardian-vscode",
+  "displayName": "Baseline Guardian",
+  "description": "Check Web Baseline support and My Baseline coverage from VS Code.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onCommand:baselineGuardian.checkFeature"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "baselineGuardian.checkFeature",
+        "title": "Baseline: Check Feature"
+      }
+    ]
+  },
+  "main": "dist/extension.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/vscode": "^1.80.0"
+  },
+  "dependencies": {
+    "@baseline-guardian/baseline-core": "file:../../packages/baseline-core"
+  }
+}

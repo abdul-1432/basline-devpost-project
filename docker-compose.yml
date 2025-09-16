@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  api:
+    build: ./apps/api
+    ports:
+      - '4000:4000'
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+    depends_on:
+      - mongo
+  web:
+    build: ./apps/web
+    ports:
+      - '5173:5173'
+    depends_on:
+      - api
+  mongo:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

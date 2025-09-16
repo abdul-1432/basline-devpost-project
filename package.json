@@ -1,0 +1,21 @@
+{
+  "name": "baseline-guardian",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Baseline-aware tooling: CLI, ESLint rule, API, and Web dashboard.",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "extensions/*"
+  ],
+  "scripts": {
+    "build": "npm run -ws build",
+    "dev:api": "npm --workspace apps/api run dev",
+    "dev:web": "npm --workspace apps/web run dev",
+    "lint": "npm run -ws lint",
+    "test": "npm run -ws test"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

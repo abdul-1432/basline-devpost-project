@@ -1,0 +1,6 @@
+packages/*/dist
+apps/*/dist
+node_modules
+.env
+*.local
+*.sarif

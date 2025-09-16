@@ -1,0 +1,25 @@
+{
+  "name": "@baseline-guardian/baseline-cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "baseline-guardian": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --ext .ts",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@baseline-guardian/baseline-core": "file:../baseline-core",
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "eslint": "^9.9.0",
+    "typescript": "^5.5.4"
+  }
+}

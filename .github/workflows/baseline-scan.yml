@@ -1,0 +1,24 @@
+name: Baseline Guardian Scan
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  scan:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm --workspace packages/baseline-core run build
+      - run: npm --workspace packages/baseline-cli run build
+      - run: node packages/baseline-cli/dist/index.js scan --path . --report sarif --out baseline.sarif --use-browserslist
+      - name: Upload SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: baseline.sarif
