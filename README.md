@@ -41,16 +41,6 @@ Monorepo structure
   - api: Express API (TypeScript) with JWT and optional MongoDB
   - web: React + Vite dashboard (TypeScript)
 
-Submitting to the hackathon
-- Fill in README sections: Features, Architecture, How it works, Limitations, Roadmap
-- Public repo with permissive license (MIT included)
-- Demo video (>3 min) – suggested flow in docs/demo-script.md
-- Hosted demo (optional): deploy API and Web to Render/Fly/Vercel; Mongo via Atlas free tier
-
-CI Badges (update org/repo)
-- Code scanning: ![Baseline Guardian Scan](https://github.com/ORG/REPO/actions/workflows/baseline-scan.yml/badge.svg)
-- PR comment: ![Baseline PR Comment](https://github.com/ORG/REPO/actions/workflows/pr-comment.yml/badge.svg)
-
 License
 MIT
 
