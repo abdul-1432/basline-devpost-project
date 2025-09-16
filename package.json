@@ -5,8 +5,7 @@
   "description": "Baseline-aware tooling: CLI, ESLint rule, API, and Web dashboard.",
   "workspaces": [
     "packages/*",
-    "apps/*",
-    "extensions/*"
+    "apps/*"
   ],
   "scripts": {
     "build": "npm run -ws build",
