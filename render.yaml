@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: baseline-guardian-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: |
+      npm ci
+      npm --workspace packages/baseline-core run build
+      npm --workspace apps/api run build
+    startCommand: node apps/api/dist/index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: JWT_SECRET
+        generateValue: true
+  - type: static
+    name: baseline-guardian-web
+    buildCommand: |
+      npm ci
+      npm --workspace apps/web run build
+    staticPublishPath: apps/web/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: baseline-guardian-api
+          property: host
+          # Render static sites cannot read other service URLs at build-time directly.
+          # After API is deployed, set this to https://<api-service>.onrender.com
