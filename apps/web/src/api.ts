@@ -4,7 +4,7 @@ export interface FeatureInfo { id: string; name: string; baseline?: string; }
 // we switch to a static "demo" mode so the site works on GitHub Pages without a backend.
 const RAW_API_URL: string | undefined = (import.meta as any).env?.VITE_API_URL;
 const API_URL = RAW_API_URL?.trim();
-const IS_STATIC = !API_URL || /^(https?:\/\/)?(localhost|127\.0\.0\.1)(:|\/|$)/i.test(API_URL);
+export const isStatic = !API_URL || /^(https?:\/\/)?(localhost|127\.0\.0\.1)(:|\/|$)/i.test(API_URL);
 
 // Minimal demo data used when running in static mode (GitHub Pages)
 const DEMO_FEATURES: FeatureInfo[] = [
@@ -16,7 +16,7 @@ const DEMO_FEATURES: FeatureInfo[] = [
 ];
 
 export async function fetchToken(user = 'demo'): Promise<string> {
-  if (IS_STATIC) return 'static';
+  if (isStatic) return 'static';
   const res = await fetch(`${API_URL}/auth/token`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -27,7 +27,7 @@ export async function fetchToken(user = 'demo'): Promise<string> {
 }
 
 export async function getFeatures(token: string): Promise<FeatureInfo[]> {
-  if (IS_STATIC) return DEMO_FEATURES;
+  if (isStatic) return DEMO_FEATURES;
   const res = await fetch(`${API_URL}/features`, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
@@ -35,7 +35,7 @@ export async function getFeatures(token: string): Promise<FeatureInfo[]> {
 }
 
 export async function getTargets(token: string): Promise<string[]> {
-  if (IS_STATIC) return [];
+  if (isStatic) return [];
   const res = await fetch(`${API_URL}/targets`, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
@@ -44,7 +44,7 @@ export async function getTargets(token: string): Promise<string[]> {
 }
 
 export async function getFeatureWithTargets(token: string, id: string): Promise<any> {
-  if (IS_STATIC) {
+  if (isStatic) {
     const match = DEMO_FEATURES.find(f => f.id === id);
     return { name: match?.name ?? id, baseline: match?.baseline ?? '-', coverage: null };
   }
